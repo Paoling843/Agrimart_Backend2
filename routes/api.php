@@ -12,11 +12,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::middleware(['auth:sanctum'])->group(function () {
-//     Route::apiResource('posts', 'App\Http\Controllers\PostController');
-//     Route::apiResource('comments', 'App\Http\Controllers\CommentController');
-//     Route::apiResource('categories', 'App\Http\Controllers\CategoryController');
-// });
+Route::middleware(['auth:sanctum'])->group(function () {
+     Route::apiResource('posts', 'App\Http\Controllers\PostController');
+     Route::apiResource('comments', 'App\Http\Controllers\CommentController');
+     Route::apiResource('categories', 'App\Http\Controllers\CategoryController');
+ });
 
 // Customer routes
 Route::get('customers', [CustomerController::class, 'index']);
